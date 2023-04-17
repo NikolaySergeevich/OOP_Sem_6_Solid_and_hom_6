@@ -1,11 +1,11 @@
-public class Persister{
-	private User user;
-	
-	public Persister(User user){
-		this.user = user;
+public class Persister extends User{
+
+
+	public Persister(String name) {
+		super(name);
 	}
-	
-	public void save(){
-		System.out.println("Save user: " + user.getName());
+	@Override
+	public String toString() {
+		return String.format("%s упорный", super.toString());
 	}
 }

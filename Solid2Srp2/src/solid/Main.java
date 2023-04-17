@@ -1,12 +1,15 @@
 package solid;
 
 import solid.srp.models.Order;
+import src.solid.repozitory.JsonSaver;
+import src.solid.views.ConsoleInput;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Введите заказ:");
-        Order order = new Order("", "", 0, 0);
-        order.inputFromConsole();
-        order.saveToJson();
+        ConsoleInput input = new ConsoleInput();
+        Order order = input.inputFromConsole();
+        JsonSaver saver = new JsonSaver();
+        saver.saveToJson(order);
     }
 }
